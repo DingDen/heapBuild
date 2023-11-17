@@ -67,7 +67,7 @@ public class Main {
         
         bloodborne.printHeap();
 
-        
+        Arrays.fill(generateRandomNumberArray, 0);
 
         // INTERFACE - OPERAÇÕES - USUÁRIO
 
