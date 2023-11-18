@@ -77,7 +77,35 @@ public class Main {
                     System.out.println("\nHeap gerado com sucesso!");
                     break;
                 case 2: //Inserção
-                    
+                    System.out.print("Digite a quantidade de números a inserir: ");
+                    int quantInsertion = user.nextInt();
+                    if(heapStruct == 1) {
+                        while (quantInsertion != 0) {
+                            if(kratosMaxHeap.getTamHeap() == kratosMaxHeap.getCapacityHeap()) {
+                                System.out.println("\nO Heap está cheio.");
+                                break;
+                            } else {
+                                System.out.print("Digite o valor da chave: ");
+                                int chave = user.nextInt();
+                                kratosMaxHeap.insertHeap(chave);
+                                System.out.println("Inserido com sucesso!");
+                            }
+                            quantInsertion -= 1;
+                        }
+                    } else if(heapStruct == 2) {
+                        while(quantInsertion != 0) {
+                            if(bloodborneMinHeap.getTamHeap() == bloodborneMinHeap.getCapacityHeap()) {
+                                System.out.println("\nO Heap está cheio.");
+                                break;
+                            } else {
+                                System.out.print("Digite o valor da chave: ");
+                                int chave = user.nextInt();
+                                bloodborneMinHeap.insertHeap(chave);
+                                System.out.println("Inserido com sucesso!");
+                            }
+                            quantInsertion -= 1;
+                        }
+                    }
                     break;
                 case 3: // Remoção
                     if(heapStruct == 1) {
