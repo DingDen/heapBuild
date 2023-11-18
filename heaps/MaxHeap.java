@@ -1,12 +1,21 @@
 package heaps;
 
+import java.util.Arrays;
+
 public class MaxHeap {
     private int[] maxHeapVetor;
     protected int capacity;
     protected int tam;
 
+    public int[] getHeapVetor() {
+        return maxHeapVetor;
+    }
     public int getTamHeap() {
         return tam;
+    }
+
+    public int setTamHeap(int tam) {
+        return this.tam = tam;
     }
 
     public int getCapacityHeap() {
@@ -80,5 +89,14 @@ public class MaxHeap {
             System.out.print(maxHeapVetor[i] + " ");
         }
         System.out.println();
+    }
+
+    public void clearHeap(int[] maxHeapVetor) {
+        Arrays.fill(maxHeapVetor, 0);
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(maxHeapVetor);
     }
 }

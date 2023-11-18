@@ -1,7 +1,19 @@
 package heaps;
 
+import java.util.Arrays;
+
 public class MinHeap extends MaxHeap {
     private int[] minHeapVetor;
+
+    @Override
+    public int[] getHeapVetor() {
+        return minHeapVetor;
+    }
+    
+    @Override
+    public int setTamHeap(int tam) {
+        return this.tam = tam;
+    }
 
     public MinHeap(int capacity) {
         super(capacity);
@@ -76,5 +88,15 @@ public class MinHeap extends MaxHeap {
             System.out.print(minHeapVetor[i] + " ");
         }
         System.out.println();
+    }
+
+    @Override
+    public void clearHeap(int[] minHeapVetor) {
+        Arrays.fill(minHeapVetor, 0);
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(minHeapVetor);
     }
 }
