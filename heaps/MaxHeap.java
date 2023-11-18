@@ -56,12 +56,14 @@ public class MaxHeap {
     
     public void removeHeap() {
         if(tam == 0) {
-            System.out.println("o Heap está vazio.");
+            System.out.println("\no Heap está vazio.");
             return;
         }
         maxHeapVetor[0] = maxHeapVetor[tam-1];
         tam -= 1;
         descer(0, tam);
+
+        System.out.println("\nRemovido com sucesso!");
     }
 
     protected void subir(int i) {
@@ -93,10 +95,5 @@ public class MaxHeap {
 
     public void clearHeap(int[] maxHeapVetor) {
         Arrays.fill(maxHeapVetor, 0);
-    }
-
-    @Override
-    public String toString() {
-        return Arrays.toString(maxHeapVetor);
     }
 }

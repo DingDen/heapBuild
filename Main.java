@@ -48,7 +48,7 @@ public class Main {
         
         int comando;
         do {    
-            System.out.print("Escolha um comando: ");
+            System.out.print("\nEscolha um comando: ");
             comando = user.nextInt();  
             switch (comando) {
                 case 0:
@@ -68,30 +68,63 @@ public class Main {
                         for(int i : generatedRandomNumberArray) {
                             kratosMaxHeap.insertHeap(i);
                         }
-                        System.out.println("\nMax-heap: " + kratosMaxHeap.toString());
                     } else if (heapStruct == 2) {
                         bloodborneMinHeap.setTamHeap(0);
                         for(int j : generatedRandomNumberArray) {
                             bloodborneMinHeap.insertHeap(j);
                         }
-                        System.out.println("\nMin-heap: " + bloodborneMinHeap.toString());
                     }
-                    System.out.println("\nGerado com sucesso!");
+                    System.out.println("\nHeap gerado com sucesso!");
                     break;
                 case 2: //Inserção
                     
                     break;
                 case 3: // Remoção
-                
+                    if(heapStruct == 1) {
+                        kratosMaxHeap.removeHeap();
+                    } else if(heapStruct == 2) {
+                        bloodborneMinHeap.removeHeap();
+                    }
                     break;
                 case 4: // Ordenação
-                
+                    if(heapStruct == 1) {
+                        kratosMaxHeap.arranjarHeapSort(kratosMaxHeap.getTamHeap());
+                        System.out.print("Vetor ordenado crescente: ");
+                        kratosMaxHeap.printHeap();
+                        kratosMaxHeap.clearHeap(kratosMaxHeap.getHeapVetor());
+                        kratosMaxHeap.setTamHeap(0);
+                    } else if(heapStruct == 2) {
+                        bloodborneMinHeap.arranjarHeapSort(bloodborneMinHeap.getTamHeap());
+                        System.out.print("Vetor ordenado decrescente: ");
+                        bloodborneMinHeap.printHeap();
+                        bloodborneMinHeap.clearHeap(bloodborneMinHeap.getHeapVetor());
+                        bloodborneMinHeap.setTamHeap(0);
+                    }
+                    System.out.println("\nHeap vazio.");
+                    System.out.println("\nOrdenação concluída!");
                     break;
                 case 5: // Visualizar
-                
+                    if(heapStruct == 1) {
+                        System.out.print("Max-heap: ");
+                        kratosMaxHeap.printHeap();
+                        System.out.printf("Tamanho do Max-heap: %d", kratosMaxHeap.getTamHeap());
+                        System.out.println();
+                    } else if(heapStruct == 2) {
+                        System.out.print("Min-heap: ");
+                        bloodborneMinHeap.printHeap();
+                        System.out.printf("Tamanho do Min-heap: %d", bloodborneMinHeap.getTamHeap());
+                        System.out.println();
+                    }
                     break;
                 case 6: // Clear
-                
+                    if(heapStruct == 1) {
+                        kratosMaxHeap.clearHeap(kratosMaxHeap.getHeapVetor());
+                        kratosMaxHeap.setTamHeap(0);
+                    } else if(heapStruct == 2) {
+                        bloodborneMinHeap.clearHeap(bloodborneMinHeap.getHeapVetor());
+                        bloodborneMinHeap.setTamHeap(0);
+                    }
+                    System.out.println("\nHeap esvaziado.");
                     break;  
                 default:
                     System.out.println("Digite um comando válido.");

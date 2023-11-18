@@ -74,12 +74,14 @@ public class MinHeap extends MaxHeap {
     @Override
     public void removeHeap() {
         if(tam == 0) {
-            System.out.println("o Heap está vazio.");
+            System.out.println("\no Heap está vazio.");
             return;
         }
         minHeapVetor[0] = minHeapVetor[tam-1];
         tam -= 1;
         descer(0, tam);
+
+        System.out.println("\nRemovido com sucesso!");
     }
 
     @Override
@@ -93,10 +95,5 @@ public class MinHeap extends MaxHeap {
     @Override
     public void clearHeap(int[] minHeapVetor) {
         Arrays.fill(minHeapVetor, 0);
-    }
-
-    @Override
-    public String toString() {
-        return Arrays.toString(minHeapVetor);
     }
 }
